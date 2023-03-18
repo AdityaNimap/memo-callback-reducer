@@ -25,6 +25,7 @@ const App = () => {
 
   return (
     <div className='App'>
+      <h2>Use Memo hook</h2>
       <button onClick={incrementOne}>Counter One - {counterOne}</button>
       <span>{isEven ? "Even" : "Odd"}</span><br />
       <button onClick={incrementTwo}>Counter Two- {counterTwo}</button>
@@ -33,11 +34,13 @@ const App = () => {
       <br/>
       <br/>
       <br/>
+      <h2>Use Callback Hook</h2>
       <Parent/>
       <br/>
       <br/>
       <br/>
       <br/>
+      <h2>Use Reducer Hook</h2>
       <Reducer/>
     </div>
   )

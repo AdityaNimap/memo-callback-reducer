@@ -1,12 +1,12 @@
 import { memo } from "react"
-import React  from 'react'
+import React from 'react'
 
-const Child = (props) => {
-    const {fun, counter} = props
-    console.log("Child Component Rendered")
+const Child = ({increment,children}) => {
+  console.log(`${children} Rendered`)
   return (
     <div>
-      <h1>Child Component</h1>
+      <button onClick={increment}>Increment {children}</button>
+      
     </div>
   )
 }

@@ -1,21 +1,24 @@
 import React, { useCallback, useState } from 'react'
-import Child from './Child';
+import Child from './Child'
 
 const Parent = () => {
-    const [counterOne, setCounterOne] = useState(0);
-    const [counterTwo, setCounterTwo] = useState(0);
+    const [age,setAge] = useState(20)
+    const [sal,setSal] = useState(15000)
 
-    const incrementOne = () => {
-        setCounterOne(counterOne + 1);
-    }
-    const fun = useCallback(() =>{
-        console.log("Hello from parent")
-    },[counterTwo])
+    const incrementAge = useCallback(()=>{
+        setAge(age+1)
+        // console.log("incrementAge rendered")
+    },[age])
+
+    const incrementSal = useCallback(()=>{
+        setSal(sal+1)
+        // console.log("incrementSal renderd")
+    },[sal])
 
     return (
         <div>
-            <Child fun = {fun()} counter = {counterTwo}/>
-            <button onClick={incrementOne}>Counter One - {counterOne}</button>
+            <Child increment={incrementAge}>Age</Child>
+            <Child increment={incrementSal}>Sal</Child>
         </div>
     )
 }
